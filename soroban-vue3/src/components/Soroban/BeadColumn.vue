@@ -1,9 +1,14 @@
 <template>
   <div>
     <div class="flex flex-col border border-red-100">
-      <Bead :five="true" :on="fiveOn" />
+      <Bead :five="true" :on="fiveOn" :position="position" />
       <div class="mt-5">
-        <Bead v-for="(beadOn, i) in smallBeads" :key="i" :on="beadOn" />
+        <Bead
+          v-for="(beadOn, i) in smallBeads"
+          :key="i"
+          :on="beadOn"
+          :position="position"
+        />
       </div>
     </div>
     <div class="text-center">{{ digit }}</div>
@@ -19,6 +24,10 @@ const store = useSorobanStore();
 
 const props = defineProps({
   digit: {
+    type: Number,
+    default: 0,
+  },
+  position: {
     type: Number,
     default: 0,
   },

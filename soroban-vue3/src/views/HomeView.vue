@@ -5,7 +5,12 @@
       <SorobanFull></SorobanFull>
     </div>
     <div class="text-center mt-10">
-      <button @click="addOne">Add one to soroban</button>
+      <button class="border px-2 py-1" @click="addOne">
+        Add one to soroban
+      </button>
+      <button class="border px-2 py-1 border-red-100 ml-3" @click="reset">
+        Reset soroban
+      </button>
     </div>
   </main>
 </template>
@@ -18,5 +23,9 @@ const store = useSorobanStore();
 
 const addOne = () => {
   store.setSorobanNumber(store.sorobanNumber + 1);
+};
+
+const reset = () => {
+  store.setSorobanNumber(0);
 };
 </script>
