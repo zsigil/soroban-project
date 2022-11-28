@@ -15,7 +15,6 @@ export const useSorobanStore = defineStore('soroban', {
       zeros = new Array(this.columnNumber - firstList.length).fill(0);
       let digitList = firstList.map((d) => d * 1)
       return [...zeros, ...digitList]
-
     }
   },
   actions: {

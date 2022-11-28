@@ -11,8 +11,11 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
+import { useSorobanStore } from "@/stores/soroban";
 import Bead from "./Bead.vue";
+
+const store = useSorobanStore();
 
 const props = defineProps({
   digit: {
@@ -57,6 +60,13 @@ function translateDigit() {
 onMounted(() => {
   smallBeads.value = translateDigit();
 });
+
+watch(
+  () => props.digit,
+  () => {
+    smallBeads.value = translateDigit();
+  }
+);
 </script>
 
 <style></style>
