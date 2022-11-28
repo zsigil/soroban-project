@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bead {
+  @apply w-4 h-4 bg-blue-400 rounded-full;
+}
+
+.bead.five {
+  @apply bg-green-400;
+}
+
+.bead.on {
+  @apply -translate-y-5 transition-all ease-in-out duration-300;
+}
+
+.bead.five.on {
+  @apply translate-y-5;
+}

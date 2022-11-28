@@ -12,7 +12,7 @@
     <BeadColumn />
     <BeadColumn />
     <BeadColumn />
-    <BeadColumn />
+    <BeadColumn :digit="7" />
   </div>
 </template>
 
